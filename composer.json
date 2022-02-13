@@ -8,15 +8,25 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "inertiajs/inertia-laravel": "^0.5.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^8.75",
+        "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "maatwebsite/excel": "^3.1",
+        "morilog/jalali": "3.*",
+        "spatie/laravel-permission": "^5.5",
+        "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "imanghafoori/laravel-microscope": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
+        "nascent-africa/jetstrap": "^2.5",
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10"
     },
