@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Jetstream\Http\Livewire\UpdatePasswordForm;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class UpdatePasswordTest extends TestCase
@@ -15,11 +17,13 @@ class UpdatePasswordTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
 
-        $response = $this->put('/user/password', [
-            'current_password' => 'password',
-            'password' => 'new-password',
-            'password_confirmation' => 'new-password',
-        ]);
+        Livewire::test(UpdatePasswordForm::class)
+                ->set('state', [
+                    'current_password' => 'password',
+                    'password' => 'new-password',
+                    'password_confirmation' => 'new-password',
+                ])
+                ->call('updatePassword');
 
         $this->assertTrue(Hash::check('new-password', $user->fresh()->password));
     }
@@ -28,13 +32,14 @@ class UpdatePasswordTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
 
-        $response = $this->put('/user/password', [
-            'current_password' => 'wrong-password',
-            'password' => 'new-password',
-            'password_confirmation' => 'new-password',
-        ]);
-
-        $response->assertSessionHasErrors();
+        Livewire::test(UpdatePasswordForm::class)
+                ->set('state', [
+                    'current_password' => 'wrong-password',
+                    'password' => 'new-password',
+                    'password_confirmation' => 'new-password',
+                ])
+                ->call('updatePassword')
+                ->assertHasErrors(['current_password']);
 
         $this->assertTrue(Hash::check('password', $user->fresh()->password));
     }
@@ -43,13 +48,14 @@ class UpdatePasswordTest extends TestCase
     {
         $this->actingAs($user = User::factory()->create());
 
-        $response = $this->put('/user/password', [
-            'current_password' => 'password',
-            'password' => 'new-password',
-            'password_confirmation' => 'wrong-password',
-        ]);
-
-        $response->assertSessionHasErrors();
+        Livewire::test(UpdatePasswordForm::class)
+                ->set('state', [
+                    'current_password' => 'password',
+                    'password' => 'new-password',
+                    'password_confirmation' => 'wrong-password',
+                ])
+                ->call('updatePassword')
+                ->assertHasErrors(['password']);
 
         $this->assertTrue(Hash::check('password', $user->fresh()->password));
     }

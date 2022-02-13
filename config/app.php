@@ -163,6 +163,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Module Service Providers...
+         */
+        Modules\User\Providers\UserServiceProvider::class,
+        /*
          * Package Service Providers...
          */
         Intervention\Image\ImageServiceProvider::class,
