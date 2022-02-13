@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="31" viewBox="0 0 40 31">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 150px;
+        opacity: 0.5;
+        fill: #f98e47;
+        text-anchor: end;
+        font-family: Poppins;
+      }
+    </style>
+  </defs>
+  <text id="_" data-name=",," class="cls-1" transform="translate(-5.004 20) rotate(180)"><tspan x="0">,,</tspan></text>
+</svg>
