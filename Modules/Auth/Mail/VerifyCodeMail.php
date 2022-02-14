@@ -1,19 +1,15 @@
 <?php
 
-namespace Mlk\User\Mail;
+namespace Modules\Auth\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Mlk\User\Models\User;
 
 class VerifyCodeMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * @var User
-     */
     public $code;
 
     /**
@@ -34,7 +30,6 @@ class VerifyCodeMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('User::mails.verify-mail')->
-            subject('وب آموز | کد فعالسازی');
+        return $this->markdown('Auth::mails.verify-mail')->subject("Activation code | " . config('app.name'));
     }
 }

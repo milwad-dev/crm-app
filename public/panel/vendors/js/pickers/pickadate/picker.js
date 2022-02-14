@@ -18,7 +18,7 @@
     // Browser globals.
     else if ( typeof window == 'object' )
         window.Picker = factory( jQuery )
-    
+
     else this.Picker = factory( jQuery )
 
 }(function( $ ) {
@@ -287,7 +287,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                         // * In Firefox stopPropagation() doesn’t prevent right-click events from bubbling,
                         //   which causes the picker to unexpectedly close when right-clicking it. So make
                         //   sure the event wasn’t a right-click.
-                        // * In Chrome 62 and up, password autofill causes a simulated focusin event which
+                        // * In Chrome 62 and up, passwords autofill causes a simulated focusin event which
                         //   closes the picker.
                         if ( ! event.isSimulated && target != ELEMENT && target != document && event.which != 3 ) {
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Mlk\User\Notifications;
+namespace Modules\Auth\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Mlk\User\Mail\ResetPasswordRequestMail;
-use Mlk\User\Services\VerifyCodeService;
+use Modules\Auth\Mail\ResetPasswordRequestMail;
+use Modules\Auth\Services\VerifyCodeService;
 
 class ResetPasswordRequestNotification extends Notification
 {

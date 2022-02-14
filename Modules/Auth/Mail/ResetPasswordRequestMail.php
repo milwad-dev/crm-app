@@ -1,19 +1,15 @@
 <?php
 
-namespace Mlk\User\Mail;
+namespace Modules\Auth\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Mlk\User\Models\User;
 
 class ResetPasswordRequestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * @var User
-     */
     public $code;
 
     /**
@@ -23,7 +19,6 @@ class ResetPasswordRequestMail extends Mailable
      */
     public function __construct($code)
     {
-
         $this->code = $code;
     }
 
@@ -34,7 +29,6 @@ class ResetPasswordRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('User::mails.reset-password-verify-code')->
-            subject('وب آموز | بازیابی رمز عبور');
+        return $this->markdown('Auth::mails.reset-password-verify-code')->subject("Password recovery | " . config('app.name'));
     }
 }

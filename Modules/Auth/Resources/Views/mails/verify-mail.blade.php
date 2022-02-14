@@ -1,12 +1,12 @@
 @component('mail::message')
-# کد فعالسازی حساب شما در وب آموز
+# Your account activation code in {{ config('app.name') }}
 
-این ایمیل به دلیل ثبت نام شما در سایت وب آموز برای شما ارسال شده است. **در صورتی که ثبت نامی توسط شما انجام نشده است** این ایمیل را نادیده بگیرید.
+This email has been sent to you due to your registration on the {{ config('app.name') }}. ** If you have not registered ** Ignore this email.
 
 @component('mail::panel')
-کد فعالسازی شما: {{ $code }}
+Your account activation code: {{ $code }}
 @endcomponent
 
-با تشکر,<br>
+Thnaks,<br>
 {{ config('app.name') }}
 @endcomponent

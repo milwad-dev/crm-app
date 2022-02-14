@@ -14,9 +14,9 @@ class LoginController extends Controller
 
     public function login(AuthRepo $authRepo)
     {
-//        if (auth()->attempt(request(['email', 'password'])) == false) return back()->with($notification);
-        if (auth()->attempt(request(['email', 'password'])) == false) {
-            return redirect()->back()->with('error', 'The email or password is incorrect, Please try again');
+//        if (auth()->attempt(request(['email', 'passwords'])) == false) return back()->with($notification);
+        if (auth()->attempt(request(['email', 'passwords'])) == false) {
+            return redirect()->back()->with('error', 'The email or passwords is incorrect, Please try again');
         }
         return redirect()->route('landing.index');
     }

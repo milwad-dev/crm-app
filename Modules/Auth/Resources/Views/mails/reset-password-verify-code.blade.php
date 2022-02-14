@@ -1,12 +1,12 @@
 @component('mail::message')
-# کد بازیابی رمز عبور حساب شما در وب آموز
+# Your account password recovery code in {{ config('app.name') }}
 
-این ایمیل به درخواست شما جهت بازیابی رمز عبور در سایت وب آموز برای شما ارسال شده است. **در صورتی که این درخواست توسط شما انجام نشده است** این ایمیل را نادیده بگیرید.
+This email has been sent to you at your request to recover the password on the website. ** If this request was not made by you ** Ignore this email.
 
 @component('mail::panel')
-کد بازیابی رمز عبور شما: {{ $code }}
+Your password recovery code: {{ $code }}
 @endcomponent
 
-با تشکر,<br>
+Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

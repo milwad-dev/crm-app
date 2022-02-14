@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Mlk\User\Services;
-
+namespace Modules\Auth\Services;
 
 class VerifyCodeService
 {

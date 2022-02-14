@@ -18,12 +18,13 @@
                     @csrf
                     <div class="mb-1">
                         <x-auth-label for="email" title="email" />
-                        <x-auth-input type="email" id="email" name="email" placeholder="Enter Your Email Address" index="1" />
+                        <x-auth-input type="email" id="email" name="email" placeholder="Enter Your Email Address"
+                        index="1" autofocus />
                     </div>
                     <div class="mb-1">
                         <div class="d-flex justify-content-between">
                             <x-auth-label for="password" title="password" />
-                            <a href="{{ route('password.forgot') }}"><small>Forgot Password?</small></a>
+                            <a href="{{ route('passwords.request') }}"><small>Forgot Password?</small></a>
                         </div>
                         <div class="input-group input-group-merge form-password-toggle">
                             <x-auth-input class="form-control form-control-merge" type="password" id="password"

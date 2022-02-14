@@ -1,8 +1,8 @@
 <?php
 
-namespace Mlk\User\Http\Requests;
+namespace Modules\Auth\Http\Requests;
 
-use Mlk\User\Services\VerifyCodeService;
+use Modules\Auth\Services\VerifyCodeService;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ResetPasswordVerifyCodeRequest extends FormRequest

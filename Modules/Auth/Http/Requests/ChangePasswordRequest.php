@@ -1,9 +1,9 @@
 <?php
 
-namespace Mlk\User\Http\Requests;
+namespace Modules\Auth\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Mlk\User\Rules\ValidPassword;
+use Modules\Auth\Rules\ValidPassword;
 
 class ChangePasswordRequest extends FormRequest
 {

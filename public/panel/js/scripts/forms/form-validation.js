@@ -83,7 +83,7 @@ $(function () {
         },
         'confirm-password': {
           required: true,
-          equalTo: '#basic-default-password'
+          equalTo: '#basic-default-passwords'
         },
         'select-country': {
           required: true
