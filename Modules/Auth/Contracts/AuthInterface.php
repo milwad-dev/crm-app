@@ -2,7 +2,7 @@
 
 namespace Modules\Auth\Contracts;
 
-interface RegisterInterface
+interface AuthInterface
 {
     public function store($request);
 }

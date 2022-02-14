@@ -1,16 +1,11 @@
 <?php
 
-namespace Mlk\Auth\Rules;
+namespace Modules\Auth\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
 class ValidPassword implements Rule
 {
-    public function __construct()
-    {
-
-    }
-
     public function passes($attribute, $value)
     {
         return preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/', $value);
@@ -18,6 +13,6 @@ class ValidPassword implements Rule
 
     public function message()
     {
-        return 'رمز عبور باید حروف بزرگ و حروف کوچک با اعداد باشد.';
+        return 'Password must be uppercase and lowercase with numbers.';
     }
 }

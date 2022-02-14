@@ -166,6 +166,8 @@ return [
          * Module Service Providers...
          */
         Modules\User\Providers\UserServiceProvider::class,
+        Modules\Auth\Providers\AuthServiceProvider::class,
+        Modules\Share\Providers\ShareServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -182,8 +184,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\FortifyServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
     ],
 
     /*

@@ -2,10 +2,10 @@
 
 namespace Modules\Auth\Services;
 
-use Modules\Auth\Contracts\RegisterInterface;
+use Modules\Auth\Contracts\AuthInterface;
 use Modules\User\Models\User;
 
-class RegisterService implements RegisterInterface
+class AuthService implements AuthInterface
 {
     public function store($request)
     {
