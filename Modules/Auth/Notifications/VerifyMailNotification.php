@@ -4,17 +4,12 @@ namespace Modules\Auth\Notifications;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Mlk\User\Mail\VerifyCodeMail;
+use Modules\Auth\Mail\VerifyCodeMail;
 use Modules\Auth\Services\VerifyCodeService;
 
 class VerifyMailNotification extends Notification
 {
     use Queueable;
-
-    public function __construct()
-    {
-        //
-    }
 
     public function via($notifiable)
     {
