@@ -23,12 +23,12 @@
                     </div>
                     <div class="mb-1">
                         <div class="d-flex justify-content-between">
-                            <x-auth-label for="password" title="password" />
+                            <x-auth-label for="passwords" title="password" />
                             <a href="{{ route('passwords.request') }}"><small>Forgot Password?</small></a>
                         </div>
                         <div class="input-group input-group-merge form-password-toggle">
-                            <x-auth-input class="form-control form-control-merge" type="password" id="password"
-                            name="password" placeholder="Enter Your Password" index="2" />
+                            <x-auth-input class="form-control form-control-merge" type="password" id="passwords"
+                            name="passwords" placeholder="Enter Your Password" index="2" />
                             <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                         </div>
                     </div>
