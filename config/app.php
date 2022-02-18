@@ -170,6 +170,7 @@ return [
         Modules\Share\Providers\ShareServiceProvider::class,
         Modules\Landing\Providers\LandingServiceProvider::class,
         Modules\Panel\Providers\PanelServiceProvider::class,
+        Modules\Marketing\Providers\MarketingServiceProvider::class,
         /*
          * Package Service Providers...
          */

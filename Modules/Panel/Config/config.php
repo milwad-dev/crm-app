@@ -2,6 +2,9 @@
 
 return [
     'items' => [
+//       Main
         'panel' => [],
+//       Marketing
+        'campaigns' => [],
     ],
 ];

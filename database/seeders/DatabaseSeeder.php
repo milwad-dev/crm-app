@@ -3,9 +3,12 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Modules\Marketing\Models\Campaign;
 
 class DatabaseSeeder extends Seeder
 {
+    public static $seeders = [];
+
     /**
      * Seed the application's database.
      *
@@ -13,6 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+//        User::factory(10)->create();
+        Campaign::factory(10)->create();
     }
 }

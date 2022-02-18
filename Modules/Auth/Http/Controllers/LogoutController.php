@@ -2,7 +2,7 @@
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Modules\Share\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class LogoutController extends Controller

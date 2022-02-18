@@ -2,7 +2,7 @@
 
 namespace Modules\Panel\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Modules\Share\Http\Controllers\Controller;
 
 class PanelController extends Controller
 {

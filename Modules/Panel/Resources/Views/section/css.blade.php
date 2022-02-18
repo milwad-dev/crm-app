@@ -18,4 +18,9 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('panel/css/plugins/charts/chart-apex.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('panel/css/plugins/extensions/ext-component-toastr.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('panel/css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('panel/css/pages/custom.css') }}">
+
+{{-- Load Toastr File --}}
+<link href="{{ asset('panel/css/jquery.toast.min.css') }}" rel="stylesheet" type="text/css" />
+
 @yield('css')

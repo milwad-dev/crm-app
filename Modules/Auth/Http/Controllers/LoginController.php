@@ -2,7 +2,7 @@
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Modules\Share\Http\Controllers\Controller;
 use Modules\Auth\Repositories\AuthRepo;
 
 class LoginController extends Controller

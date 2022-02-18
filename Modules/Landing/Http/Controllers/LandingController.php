@@ -2,7 +2,7 @@
 
 namespace Modules\Landing\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Modules\Share\Http\Controllers\Controller;
 
 class LandingController extends Controller
 {

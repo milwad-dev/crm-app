@@ -18,7 +18,8 @@
         "morilog/jalali": "3.*",
         "proengsoft/laravel-jsvalidation": "^4.7",
         "spatie/laravel-permission": "^5.5",
-        "tightenco/ziggy": "^1.0"
+        "tightenco/ziggy": "^1.0",
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
@@ -39,7 +40,8 @@
             "Modules\\Auth\\": "Modules/Auth/",
             "Modules\\Share\\": "Modules/Share/",
             "Modules\\Landing\\": "Modules/Landing/",
-            "Modules\\Panel\\": "Modules/Panel/"
+            "Modules\\Panel\\": "Modules/Panel/",
+            "Modules\\Marketing\\": "Modules/Marketing/"
         }
     },
     "autoload-dev": {

@@ -2,7 +2,7 @@
 
 namespace Modules\Auth\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Modules\Share\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Modules\Auth\Http\Requests\SendResetPasswordVerifyCodeRequest;
 use Modules\Auth\Http\Requests\ResetPasswordVerifyCodeRequest;
