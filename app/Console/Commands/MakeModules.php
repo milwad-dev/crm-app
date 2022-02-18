@@ -62,7 +62,7 @@ class {$argument}Repo
 }
 ";
         File::makeDirectory('Modules/' . $argument);
-        // Databse
+        // Database
         File::makeDirectory('Modules/' . $argument . '/Database');
         File::makeDirectory('Modules/' . $argument . '/Database/Migrations');
         // Providers

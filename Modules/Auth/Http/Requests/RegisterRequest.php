@@ -3,7 +3,7 @@
 namespace Modules\Auth\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Modules\Auth\Rules\ValidPassword;
+use Modules\Share\Rules\ValidPassword;
 
 class RegisterRequest extends FormRequest
 {

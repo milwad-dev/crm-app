@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Marketing\Database\Factories;
+namespace Modules\Share\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Marketing\Models\Campaign;

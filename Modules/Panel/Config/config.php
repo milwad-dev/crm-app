@@ -6,5 +6,7 @@ return [
         'panel' => [],
 //       Marketing
         'campaigns' => [],
+//       Users
+        'users' => [],
     ],
 ];

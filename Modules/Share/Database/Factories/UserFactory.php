@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\Database\Factories;
+namespace Modules\Share\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -25,8 +25,9 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->numerify('###########'),
             'email_verified_at' => now(),
-            'passwords' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // passwords
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // passwords
             'remember_token' => Str::random(10),
         ];
     }

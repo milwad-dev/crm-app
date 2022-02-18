@@ -1,21 +1,21 @@
 @extends('Panel::layouts.master')
 
-@section('title', 'Manage Campaigns')
+@section('title', 'Manage Users')
 {{-- TODO DATATABLE --}}
 @section('content')
     <div class="content-wrapper container-xxl p-0">
-        <x-panel-breadcrumb title="Manage Campaigns" buttonTitle="Create Campaign" buttonRoute="{{ route('campaigns.create') }}">
+        <x-panel-breadcrumb title="Manage Users" buttonTitle="Create User" buttonRoute="{{ route('users.create') }}">
             <li class="breadcrumb-item">
-                <a href="{{ route('campaigns.index') }}">Campaign</a>
+                <a href="{{ route('users.index') }}">User</a>
             </li>
-            <li class="breadcrumb-item active">Manage Campaigns</li>
+            <li class="breadcrumb-item active">Manage Users</li>
         </x-panel-breadcrumb>
         <div class="content-body">
             <div class="row" id="table-hover-row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Campaigns</h4>
+                            <h4 class="card-title">All Users</h4>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -23,42 +23,41 @@
                                     <tr class="text-center">
                                         <th>#</th>
                                         <th>Name</th>
-                                        <th>Status</th>
-                                        <th>Type</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Mother Campaign</th>
-                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Verify</th>
+                                        <th>Roles</th>
                                         <th>Created At</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($campaigns as $campaign)
+                                    @foreach ($users as $user)
                                         <tr class="text-center">
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $campaign->name }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->phone }}</td>
                                             <td>
-                                                <span class="badge rounded-pill badge-light-{{ $campaign->statusCss() }} me-1">
-                                                    {{ $campaign->status }}
+                                                <span class="badge rounded-pill badge-light-{{ $user->emailVerifyCss() }} me-1">
+                                                    {{ $user->emailVerifyText() }}
                                                 </span>
                                             </td>
-                                            <td><span class="badge badge-light-primary me-1">{{ $campaign->type }}</span></td>
-                                            <td>{{ $campaign->start_date }}</td>
-                                            <td>{{ $campaign->end_date }}</td>
-                                            <td>{{ $campaign->parent }}</td>
-                                            <td>{{ $campaign->user->name }}</td>
-                                            <td>{{ $campaign->created_at }}</td>
+                                            <td>-</td>
+                                            <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <a onclick="deleteItem(event, '{{ route('campaigns.destroy'
-                                                            , $campaign->id) }}')">
+                                                        <a onclick="deleteItem(event, '{{ route('users.destroy'
+                                                            , $user->id) }}')">
                                                             <i data-feather="delete"></i>
                                                         </a>
-                                                        <a href="{{ route('campaigns.edit', $campaign->id) }}">
+                                                        <a href="{{ route('users.edit', $user->id) }}">
                                                             <i data-feather="edit"></i>
                                                         </a>
+{{--                                                        <a href="{{ route('users.change_status_verify_email', $user->id) }}">--}}
+{{--                                                            <i data-feather="refresh-cw"></i>--}}
+{{--                                                        </a>--}}
                                                     </div>
                                                 </div>
                                             </td>
@@ -66,7 +65,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $campaigns->links() }}
+                            {{ $users->links() }}
                         </div>
                     </div>
                 </div>

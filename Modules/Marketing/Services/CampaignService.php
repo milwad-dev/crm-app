@@ -10,10 +10,9 @@ class CampaignService implements ServicesInterface
 {
     private $class = Campaign::class;
 
-    public function store($request, $user_id)
+    public function store($request)
     {
-//        dd($user_id);
-        return $this->getDataByUserId($user_id)->create([
+        return $this->getData()->create([
             'campaign_id' => $request->campaign_id,
             'user_id' => $user_id,
             'name' => $request->name,
@@ -35,7 +34,7 @@ class CampaignService implements ServicesInterface
 
     public function update($request, $id, $user_id)
     {
-        return $this->getDataByUserId($user_id)->whereId($id)->update([
+        return $this->getData()->where('user_id', $user_id)->whereId($id)->update([
             'campaign_id' => $request->campaign_id,
             'name' => $request->name,
             'status' => $request->status,
@@ -54,8 +53,8 @@ class CampaignService implements ServicesInterface
         ]);
     }
 
-    private function getDataByUserId($user_id)
+    private function getData()
     {
-        return ShareRepo::query($this->class)->where('user_id', $user_id);
+        return ShareRepo::query($this->class);
     }
 }

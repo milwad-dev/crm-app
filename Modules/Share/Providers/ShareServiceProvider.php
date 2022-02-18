@@ -2,6 +2,7 @@
 
 namespace Modules\Share\Providers;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\ServiceProvider;
 use Modules\Share\Components\Auth\Button;
 use Modules\Share\Components\Auth\Input;
@@ -26,5 +27,8 @@ class ShareServiceProvider extends ServiceProvider
             BreadcrumbPanel::class, InputPanel::class, LabelPanel::class, ButtonPanel::class, SelectPanel::class,
             TextareaPanel:: class,
         ]);
+        Factory::guessFactoryNamesUsing(function (string $modelName) {
+            return 'Modules\Share\Database\Factories\\' . class_basename($modelName) .'Factory';
+        });
     }
 }

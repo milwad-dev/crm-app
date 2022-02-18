@@ -42,7 +42,7 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            @foreach(config('dashboardConfig.items') as $sidebarItem)
+            @foreach(config('panelConfig.items') as $sidebarItem)
 {{--                @if(!array_key_exists('permission', $sidebarItem) ||- TODO FOR ROLE PERMISSION -}}
 {{--                        auth()->user()->hasAnyPermission($sidebarItem['permission']) ||--}}
 {{--                        auth()->user()->hasPermissionTo(\Modules\RolePermissions\Models\Permission::PERMISSION_SUPER_ADMIN))--}}
