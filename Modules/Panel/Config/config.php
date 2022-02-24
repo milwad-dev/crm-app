@@ -8,5 +8,6 @@ return [
         'campaigns' => [],
 //       Users
         'users' => [],
+        'role-permissions' => [],
     ],
 ];

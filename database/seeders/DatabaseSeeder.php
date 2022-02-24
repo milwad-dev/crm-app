@@ -10,13 +10,9 @@ class DatabaseSeeder extends Seeder
 {
     public static $seeders = [];
 
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
+        foreach (self::$seeders as $seeder) $this->call($seeder);
         User::factory(10)->create();
         Campaign::factory(10)->create();
     }

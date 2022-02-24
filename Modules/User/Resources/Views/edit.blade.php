@@ -60,7 +60,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <x-panel-button title="Save Data" />
+                                            <x-panel-button />
                                             <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
                                         </div>
                                     </div>

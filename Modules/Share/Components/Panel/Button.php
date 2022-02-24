@@ -16,7 +16,7 @@ class Button extends Component
      *
      * @return void
      */
-    public function __construct($type = 'submit', $class = 'btn btn-primary me-1 waves-effect waves-float waves-light', $title)
+    public function __construct($type = 'submit', $class = 'btn btn-primary me-1 waves-effect waves-float waves-light', $title = 'Save Data')
     {
         $this->type = $type;
         $this->class = $class;
