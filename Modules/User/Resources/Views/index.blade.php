@@ -43,7 +43,19 @@
                                                     {{ $user->emailVerifyText() }}
                                                 </span>
                                             </td>
-                                            <td>-</td>
+                                            <td>
+                                                <ul>
+                                                    @foreach ($user->roles as $role)
+                                                        <a onclick="deleteItem(event, '{{ route('users.removeRole',
+                                                            ["user" => $user->id, "role" => $role->name]) }}', 'li')">
+                                                            <span class="badge bg-primary">
+                                                                <span>{{ $role->name }}</span>
+                                                                <i data-feather='delete'></i>
+                                                            </span>
+                                                        </a>
+                                                    @endforeach
+                                                </ul>
+                                            </td>
                                             <td>{{ $user->created_at }}</td>
                                             <td>
                                                 <div class="row">
@@ -54,6 +66,10 @@
                                                         </a>
                                                         <a href="{{ route('users.edit', $user->id) }}">
                                                             <i data-feather="edit"></i>
+                                                        </a>
+                                                        <a href="#" data-bs-toggle="modal" data-bs-target="#addNewCard"
+                                                            onclick="setFormAction({{ $user->id }})">
+                                                            <i data-feather='plus-circle'></i>
                                                         </a>
 {{--                                                        <a href="{{ route('users.change_status_verify_email', $user->id) }}">--}}
 {{--                                                            <i data-feather="refresh-cw"></i>--}}
@@ -68,8 +84,18 @@
                             {{ $users->links() }}
                         </div>
                     </div>
+                    @include('User::modalRole')
                 </div>
             </div>
         </div>
-  </div>
+    </div>
 @endsection
+
+@section('js')
+    <script>
+        function setFormAction(userId) {
+            $("#select-role-form").attr('action', '{{ route('users.addRole', 0) }}'.replace('/0/', '/' + userId + '/' ))
+        }
+    </script>
+@endsection
+

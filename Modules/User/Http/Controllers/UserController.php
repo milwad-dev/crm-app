@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Modules\RolePermissions\Repositories\RolePermissionsRepo;
 use Modules\Share\Http\Controllers\Controller;
 use Modules\Share\Repositories\ShareRepo;
 use Modules\Share\Responses\AjaxResponses;
@@ -36,11 +37,12 @@ class UserController extends Controller
      * @return Application|Factory|View
      * @throws AuthorizationException
      */
-    public function index()
+    public function index(RolePermissionsRepo $rolePermissionsRepo)
     {
         $this->authorize('manage', User::class);
         $users = $this->repo->index(auth()->id())->paginate(10);
-        return view('User::index', compact('users'));
+        $roles = $rolePermissionsRepo->getAllRoles();
+        return view('User::index', compact('users', 'roles'));
     }
 
     /**
@@ -52,7 +54,7 @@ class UserController extends Controller
     public function create()
     {
         $this->authorize('manage', User::class);
-        return view('User::create');
+        return view('User::create', compact());
     }
 
     /**
@@ -133,7 +135,7 @@ class UserController extends Controller
     public function removeRole($userId, $role)
     {
         $this->authorize('manage', User::class);
-        $user = $this->repo->findById($userId);
+        $user = $this->repo->findById(id: $userId);
         $user->removeRole($role);
         return AjaxResponses::SuccessResponse();
     }

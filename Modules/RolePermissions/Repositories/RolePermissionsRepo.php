@@ -10,6 +10,11 @@ class RolePermissionsRepo
 {
 //    Roles
 
+    public function getAllRoles()
+    {
+        return Role::all();
+    }
+
     public function index()
     {
         return $this->query()->latest();
