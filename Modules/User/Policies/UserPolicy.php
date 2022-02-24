@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\RolePermissions\Policies;
+namespace Modules\User\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Modules\RolePermissions\Models\Permission;
 use Modules\User\Models\User;
 
-class RolePermissionPolicy
+class UserPolicy
 {
     use HandlesAuthorization;
 
@@ -15,12 +15,8 @@ class RolePermissionPolicy
         //
     }
 
-    public function index(User $user)
+    public function manage(User $user)
     {
-//        if ($user->hasPermissionTo(Permission::PERMISSION_MANAGE_ROLE_PERMISSIONS) ||
-//            $user->hasPermissionTo(Permission::PERMISSION_ADMIN))
-//            return true;
-//        return false;
         if ($user->hasPermissionTo(Permission::PERMISSION_ADMIN))
             return true;
         return false;

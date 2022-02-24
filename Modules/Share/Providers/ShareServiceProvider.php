@@ -3,6 +3,7 @@
 namespace Modules\Share\Providers;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Modules\Share\Components\Auth\Button;
 use Modules\Share\Components\Auth\Input;
@@ -30,5 +31,6 @@ class ShareServiceProvider extends ServiceProvider
         Factory::guessFactoryNamesUsing(function (string $modelName) {
             return 'Modules\Share\Database\Factories\\' . class_basename($modelName) .'Factory';
         });
+        Route::middleware('web')->group(__DIR__ . '/../Routes/share_routes.php');
     }
 }
