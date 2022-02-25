@@ -18,6 +18,8 @@ class Permission extends \Spatie\Permission\Models\Permission
     const PERMISSION_MANAGE_CAMPAIGNS = 'permission campaigns';
     const PERMISSION_MANAGE_SURVEYS = 'permission surveys';
 
+    // COMMENTS
+    const PERMISSION_MANAGE_COMMENTS = 'permission comments';
 
     static $permissions = [
         self::PERMISSION_SUPER_ADMIN,
@@ -33,5 +35,8 @@ class Permission extends \Spatie\Permission\Models\Permission
         // MARKETING
         self::PERMISSION_MANAGE_CAMPAIGNS,
         self::PERMISSION_MANAGE_SURVEYS,
+
+        // COMMENTS
+        self::PERMISSION_MANAGE_COMMENTS,
     ];
 }

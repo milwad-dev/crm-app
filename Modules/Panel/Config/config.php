@@ -11,5 +11,7 @@ return [
 //       Users
         'users' => [],
         'role-permissions' => [],
+//       Comments
+        'comments' => [],
     ],
 ];

@@ -4,11 +4,13 @@ namespace Modules\Marketing\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Comment\Traits\HasComments;
 use Modules\User\Models\User;
 
 class Survey extends Model
 {
     use HasFactory;
+    use HasComments;
 
     protected $fillable = ['user_id', 'name', 'status', 'body'];
 

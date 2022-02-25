@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Auth\Notifications\ResetPasswordRequestNotification;
 use Modules\Auth\Notifications\VerifyMailNotification;
+use Modules\Comment\Models\Comment;
 use Modules\Marketing\Models\Campaign;
 use Modules\Marketing\Models\Survey;
 use Spatie\Permission\Traits\HasRoles;
@@ -60,6 +61,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function surveys()
     {
         return $this->hasMany(Survey::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function getCreatedAtAttribute($date)
