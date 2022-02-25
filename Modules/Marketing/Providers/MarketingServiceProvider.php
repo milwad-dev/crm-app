@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Modules\Marketing\Models\Campaign;
+use Modules\Marketing\Models\Survey;
 use Modules\Marketing\Policies\CampaignPolicy;
+use Modules\Servey\Policies\SurveyPolicy;
 
 class MarketingServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class MarketingServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../Resources/Views/', 'Marketing');
         Route::middleware('web')->namespace($this->namespace)->group(__DIR__ . '/../Routes/marketing_routes.php');
         Gate::policy(Campaign::class, CampaignPolicy::class);
+        Gate::policy(Survey::class, SurveyPolicy::class);
     }
 
     public function boot()
@@ -28,6 +31,13 @@ class MarketingServiceProvider extends ServiceProvider
             "title" => "Campaign",
             "url" => route('campaigns.index'),
             "text" => "Marketing",
+        ]);
+
+        config()->set('panelConfig.items.surveys', [
+            "icon" => "file-text",
+            "title" => "Survey",
+            "url" => route('surveys.index'),
+            "text" => null,
         ]);
     }
 }

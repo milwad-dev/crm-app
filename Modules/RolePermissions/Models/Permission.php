@@ -16,6 +16,7 @@ class Permission extends \Spatie\Permission\Models\Permission
 
     // MARKETING
     const PERMISSION_MANAGE_CAMPAIGNS = 'permission campaigns';
+    const PERMISSION_MANAGE_SURVEYS = 'permission surveys';
 
 
     static $permissions = [
@@ -31,5 +32,6 @@ class Permission extends \Spatie\Permission\Models\Permission
 
         // MARKETING
         self::PERMISSION_MANAGE_CAMPAIGNS,
+        self::PERMISSION_MANAGE_SURVEYS,
     ];
 }

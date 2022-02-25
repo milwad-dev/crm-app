@@ -10,7 +10,7 @@ class CampaignService implements ServicesInterface
 {
     private $class = Campaign::class;
 
-    public function store($request)
+    public function store($request, $user_id = null)
     {
         return $this->getData()->create([
             'campaign_id' => $request->campaign_id,

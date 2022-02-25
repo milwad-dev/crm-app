@@ -5,6 +5,7 @@ namespace Modules\User\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Modules\RolePermissions\Models\Permission;
 use Modules\User\Policies\UserPolicy;
 use Modules\User\Models\User;
 
@@ -28,6 +29,7 @@ class UserServiceProvider extends ServiceProvider
             "title" => "User",
             "url" => route('users.index'),
             "text" => "Users",
+            "permission" => Permission::PERMISSION_SUPER_ADMIN,
         ]);
     }
 }

@@ -42,7 +42,8 @@
             "Modules\\Landing\\": "Modules/Landing/",
             "Modules\\Panel\\": "Modules/Panel/",
             "Modules\\Marketing\\": "Modules/Marketing/",
-            "Modules\\RolePermissions\\": "Modules/RolePermissions/"
+            "Modules\\RolePermissions\\": "Modules/RolePermissions/",
+            "Modules\\Factory\\": "Modules/Factory/"
         }
     },
     "autoload-dev": {

@@ -15,11 +15,11 @@ class RolePermissionTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (\Mlk\RolePermissions\Models\Permission::$permissions as $permission){
+        foreach (\Modules\RolePermissions\Models\Permission::$permissions as $permission){
             Permission::findOrCreate($permission);
         }
 
-        foreach (\Mlk\RolePermissions\Models\Role::$roles as $name => $permissions) {
+        foreach (\Modules\RolePermissions\Models\Role::$roles as $name => $permissions) {
             Role::findOrCreate($name)->givePermissionTo($permissions);
         }
     }

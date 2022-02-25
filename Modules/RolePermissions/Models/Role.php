@@ -15,6 +15,7 @@ class Role extends \Spatie\Permission\Models\Role
 
     // MARKETING
     const ROLE_CAMPAIGNS = 'role campaigns';
+    const ROLE_SURVEYS = 'role surveys';
 
     static $roles = [
         self::ROLE_SUPER_ADMIN => [Permission::PERMISSION_SUPER_ADMIN],
@@ -29,5 +30,6 @@ class Role extends \Spatie\Permission\Models\Role
 
         // MARKETING
         self::ROLE_CAMPAIGNS => [Permission::PERMISSION_MANAGE_CAMPAIGNS],
+        self::ROLE_SURVEYS => [Permission::PERMISSION_MANAGE_SURVEYS],
     ];
 }

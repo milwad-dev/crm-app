@@ -11,7 +11,7 @@ class RolePermissionsService implements ServicesInterface
 {
     private $class = Role::class;
 
-    public function store($request)
+    public function store($request, $user_id = null)
     {
         return $this->getData()->create(['name' => $request->name])->syncPermissions($request->permissions);
     }

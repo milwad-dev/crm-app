@@ -11,6 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Modules\Auth\Notifications\ResetPasswordRequestNotification;
 use Modules\Auth\Notifications\VerifyMailNotification;
 use Modules\Marketing\Models\Campaign;
+use Modules\Marketing\Models\Survey;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -54,6 +55,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function campaigns()
     {
         return $this->hasMany(Campaign::class);
+    }
+
+    public function surveys()
+    {
+        return $this->hasMany(Survey::class);
     }
 
     public function getCreatedAtAttribute($date)

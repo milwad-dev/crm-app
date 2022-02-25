@@ -16,7 +16,7 @@ class UserService implements ServicesInterface
         $user->save();
     }
 
-    public function store($request)
+    public function store($request, $user_id = null)
     {
         return $this->getData()->create([
             'name' => $request->name,

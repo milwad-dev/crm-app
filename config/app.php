@@ -172,6 +172,7 @@ return [
         Modules\Panel\Providers\PanelServiceProvider::class,
         Modules\Marketing\Providers\MarketingServiceProvider::class,
         Modules\RolePermissions\Providers\RolePermissionsServiceProvider::class,
+        Modules\Factory\Providers\FactoryServiceProvider::class,
         /*
          * Package Service Providers...
          */
