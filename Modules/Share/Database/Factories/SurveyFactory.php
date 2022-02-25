@@ -3,12 +3,12 @@
 namespace Modules\Share\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Comment\Models\Comment;
 use Modules\Marketing\Models\Survey;
 
-class CommentFactory extends Factory
+class SurveyFactory extends Factory
 {
-    protected $model = Comment::class;
+    protected $model = Survey::class;
+
     /**
      * Define the model's default state.
      *
@@ -18,11 +18,9 @@ class CommentFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'comment_id' => null,
-            'commentable_id' => 2,
-            'commentable_type' => Survey::class,
+            'name' => $this->faker->title,
+            'status' => Survey::STATUS_INACTIVE,
             'body' => $this->faker->paragraph,
-            'status' => Comment::STATUS_NEW,
         ];
     }
 }
