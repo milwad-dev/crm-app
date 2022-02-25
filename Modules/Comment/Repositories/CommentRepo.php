@@ -22,7 +22,7 @@ class CommentRepo implements RepositoriesQueryInterface
 
     public function delete($user_id, $id)
     {
-        return $this->query()->where('user_id', $user_id)->delete();
+        return $this->query()->where('user_id', $user_id)->whereId($id)->delete();
     }
 
     public function findApproved($user_id, $id)
