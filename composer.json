@@ -8,13 +8,24 @@
         "php": "^7.3|^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "inertiajs/inertia-laravel": "^0.5.2",
+        "intervention/image": "^2.7",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
+        "maatwebsite/excel": "^3.1",
+        "morilog/jalali": "3.*",
+        "proengsoft/laravel-jsvalidation": "^4.7",
+        "spatie/laravel-permission": "^5.5",
+        "tightenco/ziggy": "^1.0",
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
+        "imanghafoori/laravel-microscope": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
@@ -24,7 +35,16 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Modules\\User\\": "Modules/User/",
+            "Modules\\Auth\\": "Modules/Auth/",
+            "Modules\\Share\\": "Modules/Share/",
+            "Modules\\Landing\\": "Modules/Landing/",
+            "Modules\\Panel\\": "Modules/Panel/",
+            "Modules\\Marketing\\": "Modules/Marketing/",
+            "Modules\\RolePermissions\\": "Modules/RolePermissions/",
+            "Modules\\Factory\\": "Modules/Factory/",
+            "Modules\\Comment\\": "Modules/Comment/"
         }
     },
     "autoload-dev": {

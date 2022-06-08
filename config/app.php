@@ -163,9 +163,25 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Module Service Providers...
+         */
+        Modules\User\Providers\UserServiceProvider::class,
+        Modules\Auth\Providers\AuthServiceProvider::class,
+        Modules\Share\Providers\ShareServiceProvider::class,
+        Modules\Landing\Providers\LandingServiceProvider::class,
+        Modules\Panel\Providers\PanelServiceProvider::class,
+        Modules\Marketing\Providers\MarketingServiceProvider::class,
+        Modules\RolePermissions\Providers\RolePermissionsServiceProvider::class,
+        Modules\Factory\Providers\FactoryServiceProvider::class,
+        Modules\Comment\Providers\CommentServiceProvider::class,
+        /*
          * Package Service Providers...
          */
-
+        Intervention\Image\ImageServiceProvider::class,
+//        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -174,7 +190,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -189,7 +204,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
@@ -229,7 +243,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Image' => Intervention\Image\Facades\Image::class,
+//        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
-
 ];
